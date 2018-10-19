@@ -111,6 +111,55 @@ namespace ContactApp.ContactClasses
             }
             return isSuccess;
         }
+
+        // Method for updating data into database
+        public bool Update(ContactClass c)
+        {
+            // Create default return type and set its default value to false
+            bool isSuccess = false;
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            try
+            {
+                // SQL to update data in our db
+                string sql = "UPDATE tbl_contact SET FirstName=@FirstName, LastName=@LastName, ContactNo=@ContactNo, Address=@Address, Gender=@Gender WHERE ContactID=@ContactID";
+
+                // Create SQL command
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                // Create Parameters to add value
+                cmd.Parameters.AddWithValue("@FirstName", c.FirstName);
+                cmd.Parameters.AddWithValue("@LastName", c.LastName);
+                cmd.Parameters.AddWithValue("@ContactNo", c.ContactID);
+                cmd.Parameters.AddWithValue("@Address", c.Address);
+                cmd.Parameters.AddWithValue("@Gender", c.Gender);
+                cmd.Parameters.AddWithValue("@ContactID", c.ContactID);
+
+                // Open DB connection
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+
+                // If the query runs successfuly then the value of rows will be > 0, else it will be = 0
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return isSuccess;
+        }
     }
 }
 
