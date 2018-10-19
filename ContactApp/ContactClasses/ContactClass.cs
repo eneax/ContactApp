@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ContactApp.contactClasses
+namespace ContactApp.ContactClasses
 {
     class ContactClass
     {
@@ -61,6 +61,55 @@ namespace ContactApp.contactClasses
                 conn.Close();
             }
             return dt;
+        }
+
+        // Method for inserting data into database
+        public bool Insert(ContactClass c)
+        {
+            // Create default type and set its value to false
+            bool isSuccess = false;
+
+            // 1. Connect to db
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            try
+            {
+                // 2. Create Sql query to insert data into db
+                string sql = "INSERT INTO tbl_contact (FirsName, LastName, ContactNo, Address, Gender) VALUES (@FirsName, @LastName, @ContactNo, @Address, @Gender)";
+
+                // Create cmd using sql and conn
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                // Create Parameters to add data
+                cmd.Parameters.AddWithValue("@FirstName", c.FirstName);
+                cmd.Parameters.AddWithValue("@LastName", c.LastName);
+                cmd.Parameters.AddWithValue("@ContactNo", c.ContactID);
+                cmd.Parameters.AddWithValue("@Address", c.Address);
+                cmd.Parameters.AddWithValue("@Gender", c.Gender);
+
+                // Open connection
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+
+                // If the query runs successfuly then the value of rows will be > 0, else it will be = 0
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return isSuccess;
         }
     }
 }
