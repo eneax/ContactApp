@@ -160,6 +160,51 @@ namespace ContactApp.ContactClasses
             }
             return isSuccess;
         }
+
+        // Method for deleting data from database
+        public bool Delete(ContactClass c)
+        {
+            // Create default return value and set its value to false
+            bool isSuccess = true;
+
+            // Create SQL connection
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            try
+            {
+                // SQL to delete data
+                string sql = "DELETE FROM tbl_contact WHERE ContactID=@ContactID";
+
+                // Create SQL command 
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@ContactID", c.ContactID);
+
+                // Open connection
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+
+                // 
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            finally
+            {
+                // Close connection
+                conn.Close();
+            }
+            return isSuccess;
+        }
     }
 }
 
