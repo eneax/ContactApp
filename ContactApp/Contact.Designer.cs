@@ -46,12 +46,12 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvContactList = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.contactLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvContactList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,9 +59,9 @@
             // 
             this.contactLogo.BackColor = System.Drawing.Color.Transparent;
             this.contactLogo.Image = ((System.Drawing.Image)(resources.GetObject("contactLogo.Image")));
-            this.contactLogo.Location = new System.Drawing.Point(908, 30);
+            this.contactLogo.Location = new System.Drawing.Point(29, 30);
             this.contactLogo.Name = "contactLogo";
-            this.contactLogo.Size = new System.Drawing.Size(216, 234);
+            this.contactLogo.Size = new System.Drawing.Size(136, 154);
             this.contactLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.contactLogo.TabIndex = 1;
             this.contactLogo.TabStop = false;
@@ -71,7 +71,7 @@
             this.IblContactID.AutoSize = true;
             this.IblContactID.BackColor = System.Drawing.Color.Transparent;
             this.IblContactID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IblContactID.Location = new System.Drawing.Point(86, 360);
+            this.IblContactID.Location = new System.Drawing.Point(22, 250);
             this.IblContactID.Name = "IblContactID";
             this.IblContactID.Size = new System.Drawing.Size(168, 37);
             this.IblContactID.TabIndex = 2;
@@ -81,17 +81,18 @@
             // textBoxContactID
             // 
             this.textBoxContactID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxContactID.Location = new System.Drawing.Point(292, 353);
+            this.textBoxContactID.Location = new System.Drawing.Point(240, 250);
             this.textBoxContactID.Name = "textBoxContactID";
-            this.textBoxContactID.Size = new System.Drawing.Size(502, 44);
+            this.textBoxContactID.ReadOnly = true;
+            this.textBoxContactID.Size = new System.Drawing.Size(374, 44);
             this.textBoxContactID.TabIndex = 3;
             // 
             // textBoxFirstName
             // 
             this.textBoxFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxFirstName.Location = new System.Drawing.Point(292, 457);
+            this.textBoxFirstName.Location = new System.Drawing.Point(240, 339);
             this.textBoxFirstName.Name = "textBoxFirstName";
-            this.textBoxFirstName.Size = new System.Drawing.Size(502, 44);
+            this.textBoxFirstName.Size = new System.Drawing.Size(374, 44);
             this.textBoxFirstName.TabIndex = 5;
             // 
             // IblFirstName
@@ -99,7 +100,7 @@
             this.IblFirstName.AutoSize = true;
             this.IblFirstName.BackColor = System.Drawing.Color.Transparent;
             this.IblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IblFirstName.Location = new System.Drawing.Point(79, 464);
+            this.IblFirstName.Location = new System.Drawing.Point(22, 346);
             this.IblFirstName.Name = "IblFirstName";
             this.IblFirstName.Size = new System.Drawing.Size(175, 37);
             this.IblFirstName.TabIndex = 4;
@@ -108,9 +109,9 @@
             // textBoxLastName
             // 
             this.textBoxLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLastName.Location = new System.Drawing.Point(292, 559);
+            this.textBoxLastName.Location = new System.Drawing.Point(240, 438);
             this.textBoxLastName.Name = "textBoxLastName";
-            this.textBoxLastName.Size = new System.Drawing.Size(502, 44);
+            this.textBoxLastName.Size = new System.Drawing.Size(374, 44);
             this.textBoxLastName.TabIndex = 7;
             // 
             // IblLastName
@@ -118,7 +119,7 @@
             this.IblLastName.AutoSize = true;
             this.IblLastName.BackColor = System.Drawing.Color.Transparent;
             this.IblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IblLastName.Location = new System.Drawing.Point(81, 566);
+            this.IblLastName.Location = new System.Drawing.Point(22, 438);
             this.IblLastName.Name = "IblLastName";
             this.IblLastName.Size = new System.Drawing.Size(173, 37);
             this.IblLastName.TabIndex = 6;
@@ -127,9 +128,9 @@
             // textBoxContactNumber
             // 
             this.textBoxContactNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxContactNumber.Location = new System.Drawing.Point(292, 667);
+            this.textBoxContactNumber.Location = new System.Drawing.Point(240, 539);
             this.textBoxContactNumber.Name = "textBoxContactNumber";
-            this.textBoxContactNumber.Size = new System.Drawing.Size(502, 44);
+            this.textBoxContactNumber.Size = new System.Drawing.Size(374, 44);
             this.textBoxContactNumber.TabIndex = 9;
             // 
             // IblContactNumber
@@ -137,7 +138,7 @@
             this.IblContactNumber.AutoSize = true;
             this.IblContactNumber.BackColor = System.Drawing.Color.Transparent;
             this.IblContactNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IblContactNumber.Location = new System.Drawing.Point(81, 674);
+            this.IblContactNumber.Location = new System.Drawing.Point(22, 546);
             this.IblContactNumber.Name = "IblContactNumber";
             this.IblContactNumber.Size = new System.Drawing.Size(188, 37);
             this.IblContactNumber.TabIndex = 8;
@@ -146,10 +147,10 @@
             // textBoxAddress
             // 
             this.textBoxAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAddress.Location = new System.Drawing.Point(292, 771);
+            this.textBoxAddress.Location = new System.Drawing.Point(240, 643);
             this.textBoxAddress.Multiline = true;
             this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.Size = new System.Drawing.Size(502, 219);
+            this.textBoxAddress.Size = new System.Drawing.Size(374, 133);
             this.textBoxAddress.TabIndex = 11;
             // 
             // IblAddress
@@ -157,7 +158,7 @@
             this.IblAddress.AutoSize = true;
             this.IblAddress.BackColor = System.Drawing.Color.Transparent;
             this.IblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IblAddress.Location = new System.Drawing.Point(86, 771);
+            this.IblAddress.Location = new System.Drawing.Point(22, 643);
             this.IblAddress.Name = "IblAddress";
             this.IblAddress.Size = new System.Drawing.Size(135, 37);
             this.IblAddress.TabIndex = 10;
@@ -168,7 +169,7 @@
             this.IblGender.AutoSize = true;
             this.IblGender.BackColor = System.Drawing.Color.Transparent;
             this.IblGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IblGender.Location = new System.Drawing.Point(86, 1056);
+            this.IblGender.Location = new System.Drawing.Point(22, 830);
             this.IblGender.Name = "IblGender";
             this.IblGender.Size = new System.Drawing.Size(123, 37);
             this.IblGender.TabIndex = 12;
@@ -181,9 +182,9 @@
             this.cmbGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.cmbGender.Location = new System.Drawing.Point(292, 1056);
+            this.cmbGender.Location = new System.Drawing.Point(240, 830);
             this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(502, 45);
+            this.cmbGender.Size = new System.Drawing.Size(374, 45);
             this.cmbGender.TabIndex = 13;
             // 
             // btnAdd
@@ -191,19 +192,20 @@
             this.btnAdd.BackColor = System.Drawing.Color.ForestGreen;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(521, 1226);
+            this.btnAdd.Location = new System.Drawing.Point(132, 960);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(197, 91);
             this.btnAdd.TabIndex = 14;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.SteelBlue;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(791, 1226);
+            this.btnUpdate.Location = new System.Drawing.Point(447, 960);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(197, 91);
             this.btnUpdate.TabIndex = 15;
@@ -215,7 +217,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.Tomato;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(1057, 1226);
+            this.btnDelete.Location = new System.Drawing.Point(773, 960);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(197, 91);
             this.btnDelete.TabIndex = 16;
@@ -227,28 +229,28 @@
             this.btnClear.BackColor = System.Drawing.Color.Goldenrod;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(1331, 1226);
+            this.btnClear.Location = new System.Drawing.Point(1109, 960);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(197, 91);
             this.btnClear.TabIndex = 17;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // dgvContactList
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1164, 464);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(846, 637);
-            this.dataGridView1.TabIndex = 18;
+            this.dgvContactList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvContactList.Location = new System.Drawing.Point(743, 354);
+            this.dgvContactList.Name = "dgvContactList";
+            this.dgvContactList.RowTemplate.Height = 33;
+            this.dgvContactList.Size = new System.Drawing.Size(687, 546);
+            this.dgvContactList.TabIndex = 18;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1170, 353);
+            this.label1.Location = new System.Drawing.Point(736, 250);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 37);
             this.label1.TabIndex = 19;
@@ -257,17 +259,17 @@
             // textBoxSearch
             // 
             this.textBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSearch.Location = new System.Drawing.Point(1331, 346);
+            this.textBoxSearch.Location = new System.Drawing.Point(917, 243);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(679, 44);
+            this.textBoxSearch.Size = new System.Drawing.Size(513, 44);
             this.textBoxSearch.TabIndex = 20;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1938, 30);
+            this.pictureBox2.Location = new System.Drawing.Point(1368, 30);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox2.Size = new System.Drawing.Size(62, 64);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 21;
             this.pictureBox2.TabStop = false;
@@ -276,11 +278,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2080, 1350);
+            this.ClientSize = new System.Drawing.Size(1500, 1112);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.textBoxSearch);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvContactList);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -303,7 +305,7 @@
             this.Text = "Contact";
             this.Load += new System.EventHandler(this.Contact_Load);
             ((System.ComponentModel.ISupportInitialize)(this.contactLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvContactList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -328,7 +330,7 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvContactList;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.PictureBox pictureBox2;

@@ -52,8 +52,6 @@ namespace ContactApp.ContactClasses
             }
             catch (Exception ex)
             {
-
-                
             }
             finally
             {
@@ -74,7 +72,7 @@ namespace ContactApp.ContactClasses
             try
             {
                 // 2. Create Sql query to insert data into db
-                string sql = "INSERT INTO tbl_contact (FirsName, LastName, ContactNo, Address, Gender) VALUES (@FirsName, @LastName, @ContactNo, @Address, @Gender)";
+                string sql = "INSERT INTO tbl_contact (FirstName, LastName, ContactNo, Address, Gender) VALUES (@FirstName, @LastName, @ContactNo, @Address, @Gender)";
 
                 // Create cmd using sql and conn
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -82,7 +80,7 @@ namespace ContactApp.ContactClasses
                 // Create Parameters to add data
                 cmd.Parameters.AddWithValue("@FirstName", c.FirstName);
                 cmd.Parameters.AddWithValue("@LastName", c.LastName);
-                cmd.Parameters.AddWithValue("@ContactNo", c.ContactID);
+                cmd.Parameters.AddWithValue("@ContactNo", c.ContactNo);
                 cmd.Parameters.AddWithValue("@Address", c.Address);
                 cmd.Parameters.AddWithValue("@Gender", c.Gender);
 
@@ -102,8 +100,6 @@ namespace ContactApp.ContactClasses
             }
             catch (Exception ex)
             {
-
-                throw;
             }
             finally
             {
