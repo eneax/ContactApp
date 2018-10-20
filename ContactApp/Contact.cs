@@ -61,5 +61,11 @@ namespace ContactApp
             DataTable dt = c.Select();
             dgvContactList.DataSource = dt;
         }
+
+        // Click event for close btn
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
