@@ -64,7 +64,7 @@ namespace ContactApp
             dgvContactList.DataSource = dt;
         }
 
-        // Click event for close btn
+        // Click event for Close Button
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -78,6 +78,25 @@ namespace ContactApp
             textBoxContactNumber.Text = "";
             textBoxAddress.Text = "";
             cmbGender.Text = "";
+        }
+
+        // Click event for Update Button
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // Get data from Data Grid View and load it to the text boxes
+        private void dgvContactList_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            // Identify the row on which mouse is clicked
+            int rowIndex = e.RowIndex;
+            textBoxContactID.Text = dgvContactList.Rows[rowIndex].Cells[0].Value.ToString();
+            textBoxFirstName.Text = dgvContactList.Rows[rowIndex].Cells[1].Value.ToString();
+            textBoxLastName.Text = dgvContactList.Rows[rowIndex].Cells[2].Value.ToString();
+            textBoxContactNumber.Text = dgvContactList.Rows[rowIndex].Cells[3].Value.ToString();
+            textBoxAddress.Text = dgvContactList.Rows[rowIndex].Cells[4].Value.ToString();
+            cmbGender.Text = dgvContactList.Rows[rowIndex].Cells[5].Value.ToString();
         }
     }
 }

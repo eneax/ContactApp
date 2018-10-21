@@ -211,6 +211,7 @@
             this.btnUpdate.TabIndex = 15;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -244,6 +245,7 @@
             this.dgvContactList.RowTemplate.Height = 33;
             this.dgvContactList.Size = new System.Drawing.Size(687, 546);
             this.dgvContactList.TabIndex = 18;
+            this.dgvContactList.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvContactList_RowHeaderMouseClick);
             // 
             // label1
             // 
