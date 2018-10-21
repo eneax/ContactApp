@@ -73,6 +73,7 @@ namespace ContactApp
         // Method to clear fields
         public void Clear()
         {
+            textBoxContactID.Text = "";
             textBoxFirstName.Text = "";
             textBoxLastName.Text = "";
             textBoxContactNumber.Text = "";
@@ -130,6 +131,31 @@ namespace ContactApp
         {
             // Clear fields
             Clear();
+        }
+
+        // Click event for Delete Button
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            // Get ContactID
+            c.ContactID = Convert.ToInt32(textBoxContactID.Text);
+            bool success = c.Delete(c);
+            if (success==true)
+            {
+                // Successfully Deleted
+                MessageBox.Show("Contact successfully deleted!");
+
+                // Refresh Data Grid View
+                DataTable dt = c.Select();
+                dgvContactList.DataSource = dt;
+
+                // Clear fields
+                Clear();
+            }
+            else
+            {
+                // Failed to Delete
+                MessageBox.Show("Failed to delete contact. Try again!!");
+            }
         }
     }
 }
