@@ -124,5 +124,12 @@ namespace ContactApp
             textBoxAddress.Text = dgvContactList.Rows[rowIndex].Cells[4].Value.ToString();
             cmbGender.Text = dgvContactList.Rows[rowIndex].Cells[5].Value.ToString();
         }
+
+        // Click event for Clear Button
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            // Clear fields
+            Clear();
+        }
     }
 }
