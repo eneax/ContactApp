@@ -83,10 +83,36 @@ namespace ContactApp
         // Click event for Update Button
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            // Get the data from textboxes
+            c.ContactID = int.Parse(textBoxContactID.Text);
+            c.FirstName = textBoxFirstName.Text;
+            c.LastName = textBoxLastName.Text;
+            c.ContactNo = textBoxContactNumber.Text;
+            c.Address = textBoxAddress.Text;
+            c.Gender = cmbGender.Text;
 
+            // Update data into db
+            bool success = c.Update(c);
+            if (success == true)
+            {
+                // Updated successfully
+                MessageBox.Show("Contact had been updated successfully");
+
+                // Load data on Data GridView
+                DataTable dt = c.Select();
+                dgvContactList.DataSource = dt;
+
+                // Clear fields
+                Clear();
+            }
+            else
+            {
+                // Failed to update
+                MessageBox.Show("Failed to update contact. Try again!");
+            }
         }
 
-        // Get data from Data Grid View and load it to the text boxes
+        // Get data from Data Grid View and load it to the textboxes
         private void dgvContactList_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             // Identify the row on which mouse is clicked
