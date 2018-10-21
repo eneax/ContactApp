@@ -42,6 +42,8 @@ namespace ContactApp
             {
                 // Successfully Inserted!
                 MessageBox.Show("New Contact Successfully Inserted!");
+                // Clear fields
+                Clear();
             }
             else
             {
@@ -66,6 +68,16 @@ namespace ContactApp
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        // Method to clear fields
+        public void Clear()
+        {
+            textBoxFirstName.Text = "";
+            textBoxLastName.Text = "";
+            textBoxContactNumber.Text = "";
+            textBoxAddress.Text = "";
+            cmbGender.Text = "";
         }
     }
 }
