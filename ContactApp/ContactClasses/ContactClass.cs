@@ -13,15 +13,10 @@ namespace ContactApp.ContactClasses
     {
         // Getter Setter Properties (act as data carrier in our app)
         public int ContactID { get; set; }
-
         public string FirstName { get; set; }
-
         public string LastName { get; set; }
-
         public string ContactNo { get; set; }
-
         public string Address { get; set; }
-
         public string Gender { get; set; }
 
         // Static method for connecting to our db
@@ -147,8 +142,6 @@ namespace ContactApp.ContactClasses
             }
             catch (Exception ex)
             {
-
-                throw;
             }
             finally
             {
@@ -179,7 +172,7 @@ namespace ContactApp.ContactClasses
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
 
-                // 
+                // If the query runs successfuly then the value of rows will be > 0, else it will be = 0
                 if (rows > 0)
                 {
                     isSuccess = true;
@@ -191,8 +184,6 @@ namespace ContactApp.ContactClasses
             }
             catch (Exception ex)
             {
-
-                throw;
             }
             finally
             {
