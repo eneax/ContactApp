@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,7 +25,6 @@ namespace ContactApp
 
         private void IblContactID_Click(object sender, EventArgs e)
         {
-
         }
 
         // Button click event
@@ -156,6 +157,26 @@ namespace ContactApp
                 // Failed to Delete
                 MessageBox.Show("Failed to delete contact. Try again!!");
             }
+        }
+
+        static string myconnstr = ConfigurationManager.ConnectionStrings["cnnstrng"].ConnectionString;
+
+        // Add search functionality to textbox
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            // Get value from textbox
+            string keyword = textBoxSearch.Text;
+
+            // Create db connection
+            SqlConnection conn = new SqlConnection(myconnstr);
+
+            // Search contacts based on FirstName, LastName and Address
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM tbl_contact WHERE FirstName LIKE '%" + keyword + "%' OR LastName LIKE '%" + keyword + "%' OR Address LIKE '%" + keyword + "%'", conn);
+
+            // Create data table and fill it
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dgvContactList.DataSource = dt;
         }
     }
 }
